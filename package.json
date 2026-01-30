@@ -1,0 +1,11 @@
+{
+  "name": "snu-finntech-landing",
+  "version": "1.0.0",
+  "description": "SNU Finntech landing page",
+  "scripts": {
+    "start": "live-server --open=index.html --port=5173 --watch=."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
