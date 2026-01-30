@@ -78,86 +78,122 @@
   <body>
     <header>
       <div class="logo">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden><rect width="48" height="48" rx="10" fill="#fff"/><path d="M12 26c4 0 8-6 12-6" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="round" fill="none" stroke-linejoin="round"/></svg>
-        <div class="brand">Designer Name</div>
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <rect rx="10" width="64" height="64" fill="#0b3d91"></rect>
+          <text x="50%" y="50%" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" alignment-baseline="middle">SNU</text>
+        </svg>
+        <div style="margin-left:10px">
+          <div class="brand" style="font-family:'Poppins',sans-serif;font-weight:700;color:#0b3d91;">SNU FINTECH AI<span style="font-weight:600;color:#374151"> 12th</span></div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">K-Digital Training · BigData & Fintech</div>
+        </div>
       </div>
       <nav>
-        <a href="#projects">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#" class="btn-outline">Resume</a>
+        <a href="#overview">Overview</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#apply" class="btn-outline">Apply</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <div>
-              <h1>Designing calm, modern interfaces<br><span class="title-em">that simply work</span></h1>
-              <p class="lead">I turn product ideas into delightful experiences — UI, branding, and interaction design focused on clarity and impact.</p>
+      <section class="hero" id="overview" style="padding-top:12px">
+        <div class="hero-card" style="display:flex;gap:24px;align-items:center">
+          <div style="flex:1">
+            <h1 style="font-size:44px;margin:0 0 12px 0">SNU FINTECH AI <span class="title-em">12th</span></h1>
+            <p class="lead">Seoul National University's K-Digital Training program — a 7-month intensive to train industry-ready experts in Big Data, AI, and Fintech. Supported by the Ministry of Employment and Labor (KDT).</p>
+
+            <div class="cta-row" style="margin-top:18px">
+              <button class="btn-primary" onclick="scrollToSection('curriculum')">View curriculum</button>
+              <a href="#apply" class="btn-outline">Apply / Contact</a>
             </div>
-            <div style="text-align:right;color:var(--muted)">Available for freelance · open to full-time</div>
+
+            <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+              <div class="pill">Full scholarship via 국민내일배움카드</div>
+              <div style="color:var(--muted);font-size:13px;margin-left:auto">Start: Summer 2026 · Limited seats</div>
+            </div>
           </div>
 
-          <div class="cta-row" style="margin-top:22px">
-            <button class="btn-primary" onclick="scrollToSection('projects')">View work</button>
-            <a href="#contact" class="btn-outline">Get in touch</a>
-          </div>
+          <aside style="width:360px;border-radius:14px;background:#fff;padding:18px;border:1px solid var(--glass)">
+            <div style="font-weight:700">Program at a glance</div>
+            <ul style="padding-left:18px;color:var(--muted);margin-top:10px">
+              <li>Duration: 7 months (Modules 1-3: 4 months, Module 4: 3 months project)</li>
+              <li>Format: Full-time · in-person (weekdays)</li>
+              <li>Target: Recent grads (within 2 years) and career-changers</li>
+              <li>Contact: <a href="mailto:snufin99@gmail.com">snufin99@gmail.com</a></li>
+            </ul>
+          </aside>
         </div>
-
-        <aside style="padding:18px;border-radius:12px;background:#fff;border:1px solid var(--glass)">
-          <div style="font-weight:700">Selected work</div>
-          <div style="margin-top:12px;color:var(--muted);font-size:14px">Case studies, product design, and visual systems.</div>
-          <div style="margin-top:16px;display:flex;gap:8px">
-            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,#fbc7d4,#dbeafe)"></div>
-            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,#fde68a,#c7f9fb)"></div>
-            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,#c7f9fb,#fbc7d4)"></div>
-          </div>
-        </aside>
       </section>
 
-      <section id="projects" class="projects">
-        <h2 style="margin:0 0 12px 0">Recent Projects</h2>
-        <p style="margin:0 0 18px 0;color:var(--muted)">A selection of recent work with short descriptions and outcomes.</p>
-
-        <div class="grid">
-          <article class="card">
-            <div class="thumb">Fintech App</div>
-            <div class="meta"><h3>Financial Dashboard</h3><p>Clean dashboard UI for fast decision-making.</p></div>
-          </article>
-
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#dbeafe,#c7f9fb)">Partner Portal</div>
-            <div class="meta"><h3>Partner Portal</h3><p>Onboarding flows and embedded analytics.</p></div>
-          </article>
-
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#fde68a,#ffd6e0)">Mobile UX</div>
-            <div class="meta"><h3>Mobile Redesign</h3><p>Performance-focused mobile experiences.</p></div>
-          </article>
-        </div>
-
-        <div class="split">
-          <div class="about">
-            <h3 style="margin-top:0">About</h3>
-            <p style="color:var(--muted)">I’m a product designer with experience in startups and agencies, working closely with engineering and product teams to ship meaningful features.</p>
-            <div class="skills">
-              <div class="skill">Product Design</div>
-              <div class="skill">Interaction</div>
-              <div class="skill">Figma</div>
-              <div class="skill">Prototyping</div>
-            </div>
+      <section id="curriculum" class="projects">
+        <h2>Curriculum</h2>
+        <p style="color:var(--muted)">Core modules covering AI foundations, fintech, and hands-on practice.</p>
+        <div class="grid" style="margin-top:14px">
+          <div class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#e6f0ff,#c7ddff)">Module 1–3</div>
+            <div class="meta"><h3>Foundations & Applied AI</h3><p>AI math, statistics, Python, ML/DL, NLP, databases, visualization, fintech product design.</p></div>
           </div>
 
-          <div id="contact" class="contact">
-            <h3 style="margin-top:0">Contact</h3>
-            <form id="contactForm" onsubmit="submitContact(event)">
-              <div class="field"><label>Name</label><input type="text" id="name" required /></div>
-              <div class="field"><label>Email</label><input type="email" id="email" required /></div>
-              <div class="field"><label>Message</label><textarea id="message" required></textarea></div>
-              <div style="display:flex;gap:10px;align-items:center"><button class="btn-primary" type="submit">Send message</button><div style="color:var(--muted);font-size:13px">Typical response within 2 business days</div></div>
-            </form>
+          <div class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#dfffee,#bff3ea)">Module 3</div>
+            <div class="meta"><h3>Advanced Topics</h3><p>Algorithmic trading, blockchain, crypto & fintech law, digital currency, insurtech use cases.</p></div>
+          </div>
+
+          <div class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#fff3db,#ffe0cf)">Module 4</div>
+            <div class="meta"><h3>Capstone Project</h3><p>3-month full-time project with partner companies — real datasets, deliverables, and presentations.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capstone" style="max-width:1100px;margin:28px auto;padding:0 20px">
+        <h2>Capstone & Industry Partners</h2>
+        <p style="color:var(--muted)">Partner companies propose real problems and host student teams for immersive projects.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px">
+          <div class="card" style="min-width:220px"><h3>How it works</h3><p>Companies submit projects → teams are matched → full-time 3-month execution → mid/ final presentations → shared ownership guidance.</p></div>
+          <div class="card" style="min-width:220px"><h3>Benefits</h3><p>Intern experience, networking, potential recruitment, and practical outcomes such as prototypes or pilot platforms.</p></div>
+          <div class="card" style="min-width:220px"><h3>Past partners</h3><p>AIA, SK Energy, Yes24, IBK, Samsung Fire, KPMG, and more.</p></div>
+        </div>
+      </section>
+
+      <section id="faculty" style="max-width:1100px;margin:28px auto;padding:0 20px">
+        <h2>Faculty & Mentors</h2>
+        <p style="color:var(--muted)">Top professors, industry leaders, and practitioner mentors.</p>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <div class="meta"><h3>Professor Ryoo Geun-Kwan</h3><p>Economics & Data Science — Stanford PhD; lead faculty providing macroeconomic and statistical depth.</p></div>
+          </div>
+          <div class="card">
+            <div class="meta"><h3>Industry Practitioners</h3><p>Entrepreneurs, lawyers, and fintech engineers delivering guest lectures and workshops.</p></div>
+          </div>
+          <div class="card">
+            <div class="meta"><h3>Mentoring</h3><p>Teams work closely with SNU faculty and PhD-level teaching assistants during projects.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="apply" style="max-width:1100px;margin:28px auto;padding:0 20px">
+        <h2>Apply / Contact</h2>
+        <p style="color:var(--muted)">Applications and inquiries via email. Funding is available through the 국민내일배움카드 (no tuition burden for eligible candidates).</p>
+        <div style="display:flex;gap:18px;align-items:flex-start;margin-top:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:300px">
+            <h3>Who can apply</h3>
+            <p style="color:var(--muted)">Graduates or soon-to-be graduates within 2 years who want to specialize in BigData & Fintech or shift careers.</p>
+            <div style="margin-top:12px"><strong>How to apply</strong>
+            <ol style="color:var(--muted);margin-top:6px;padding-left:18px">
+              <li>Email a short CV and motivation to <a href="mailto:snufin99@gmail.com">snufin99@gmail.com</a></li>
+              <li>Screening & interview with program staff</li>
+              <li>Enrollment and orientation</li>
+            </ol></div>
+          </div>
+
+          <div class="card" style="min-width:260px">
+            <h3>Contact</h3>
+            <p style="color:var(--muted)">Program Office · 서울대학교 KDT</p>
+            <p style="color:var(--muted);margin:0">Phone: 02-880-6891, 6892</p>
+            <p style="color:var(--muted);margin:0">Email: <a href="mailto:snufin99@gmail.com">snufin99@gmail.com</a></p>
+            <div style="margin-top:12px"><button class="btn-primary" onclick="location.href='mailto:snufin99@gmail.com'">Email us</button></div>
           </div>
         </div>
       </section>
@@ -165,23 +201,14 @@
     </main>
 
     <footer>
-      <div>© 2026 Designer Name</div>
-      <div style="display:flex;gap:12px;align-items:center;color:var(--muted)"><a href="#">Twitter</a><a href="#">Dribbble</a><a href="#">Email</a></div>
+      <div style="color:var(--muted)">© 2026 SNU K-Digital Training · SNU FINTECH AI 12th</div>
+      <div style="display:flex;gap:12px;align-items:center;color:var(--muted)"><a href="#">Privacy</a><a href="#">FAQ</a></div>
     </footer>
 
     <script>
       function scrollToSection(id){
-        const el = document.getElementById(id);
+        const el=document.getElementById(id);
         if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-      function submitContact(e){
-        e.preventDefault();
-        const n = document.getElementById('name').value.trim();
-        const em = document.getElementById('email').value.trim();
-        const m = document.getElementById('message').value.trim();
-        if(!n||!em||!m){ alert('Please fill all fields.'); return; }
-        alert('Thanks, ' + n + '! Your message has been sent.');
-        document.getElementById('contactForm').reset();
       }
     </script>
   </body>
