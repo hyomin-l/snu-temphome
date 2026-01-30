@@ -1,8 +1,306 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>My Temporary Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SNU Finntech — Next-gen financial products for the future. Join our waitlist for early access.">
+    <title>SNU Finntech — Build the Future of Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+      :root{
+        --bg1:#0f1724; /* deep navy */
+        --bg2:#5b21b6; /* purple */
+        --accent:#ffd166; /* gold */
+        --muted:rgba(255,255,255,0.75);
+        --glass:rgba(255,255,255,0.04);
+        --card:#0b1220;
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        background: radial-gradient(1200px 600px at 10% 10%, rgba(91,33,182,0.18), transparent),
+                    linear-gradient(180deg,var(--bg1), #071129 120%);
+        color: #e6eef8;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        line-height:1.4;
+      }
+      header{
+        max-width:1200px;margin:0 auto;padding:28px 24px;display:flex;align-items:center;justify-content:space-between;
+      }
+      .logo{display:flex;gap:12px;align-items:center}
+      .logo svg{height:40px;width:40px}
+      .brand{font-weight:800;font-size:18px;letter-spacing:0.5px}
+      nav{display:flex;gap:18px;align-items:center}
+      nav a{color:var(--muted);text-decoration:none;font-weight:600}
+      .button{background:linear-gradient(90deg,var(--accent),#ffa64d);color:#071129;padding:10px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
+      .ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:10px;color:var(--muted)}
+
+      .hero{
+        max-width:1200px;margin:28px auto 0;padding:40px 24px;display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;
+      }
+      .hero-card{background:linear-gradient(135deg,rgba(255,255,255,0.03),transparent);padding:36px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+      h1{margin:0;font-size:46px;line-height:1.02}
+      p.lead{color:var(--muted);margin-top:12px;margin-bottom:20px;font-size:17px}
+
+      .badges{display:flex;gap:10px;margin-bottom:18px}
+      .pill{background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);font-size:13px;border:1px solid rgba(255,255,255,0.03)}
+
+      .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+      .feature{background:var(--glass);padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center}
+      .feature svg{width:36px;height:36px;flex-shrink:0}
+      .feature h4{margin:0;font-size:14px}
+      .feature p{margin:0;color:var(--muted);font-size:13px}
+
+      .signup{display:flex;gap:12px;margin-top:20px}
+      .input{background:transparent; border:1px solid rgba(255,255,255,0.06);padding:12px 14px;border-radius:10px;color:inherit;min-width:220px}
+
+      .card-aside{position:relative;background:linear-gradient(180deg, rgba(91,33,182,0.18), rgba(7,17,41,0.2));padding:22px;border-radius:14px}
+      .unicorn{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+      .price{font-size:12px;color:var(--muted)}
+      .ticker{display:flex;gap:10px;align-items:center;margin-top:10px}
+      .stat{background:rgba(255,255,255,0.03);padding:10px;border-radius:10px;display:flex;flex-direction:column}
+      .stat strong{font-size:20px}
+
+      section.products{max-width:1200px;margin:36px auto;padding:20px 24px}
+      .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+      .product{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+      .product h3{margin-top:8px;margin-bottom:6px}
+      .product p{margin:0;color:var(--muted)}
+
+      footer{max-width:1200px;margin:30px auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+      /* small screens */
+      @media (max-width:900px){
+        .hero{grid-template-columns:1fr;}
+        .grid{grid-template-columns:repeat(1,1fr)}
+        header{padding:18px}
+        h1{font-size:34px}
+      }
+
+      /* subtle animation */
+      .sparkle{position:absolute;right:-24px;top:-24px;width:120px;height:120px;opacity:0.95;filter:drop-shadow(0 12px 40px rgba(91,33,182,0.2));transform:rotate(12deg);animation:float 6s ease-in-out infinite}
+      @keyframes float{0%{transform:translateY(0) rotate(12deg)}50%{transform:translateY(-10px) rotate(12deg)}100%{transform:translateY(0) rotate(12deg)}}
+
+      .cta-row{display:flex;gap:12px;align-items:center}
+      .small-muted{font-size:12px;color:rgba(255,255,255,0.55)}
+
+      .notice{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);display:inline-flex;gap:10px;align-items:center}
+
+    </style>
   </head>
   <body>
-    <h1>This is the title</h1>
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#a78bfa" />
+              <stop offset="1" stop-color="#fb7185" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)" />
+          <path d="M20 44c0-8 7-12 12-14l6-3 2-6c0-3-4-8-9-8s-12 4-12 10c0 1-1 1-1 2s1 1 1 1c2 1 4 2 4 5 0 4-3 11-3 13z" fill="#fff" opacity="0.95" />
+        </svg>
+        <div>
+          <div class="brand">SNU Finntech</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Unicorn dreams. Real finance.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#product">Product</a>
+        <a href="#team">Team</a>
+        <a href="#pricing">Pricing</a>
+        <button class="ghost">Sign in</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <div class="badges">
+            <div class="pill">Unicorn Status ✨</div>
+            <div class="pill">Seed+ / Seoul</div>
+          </div>
+
+          <h1>Finance reimagined for the modern creator economy</h1>
+          <p class="lead">SNU Finntech builds composable financial primitives, lending, and treasury tools that scale from startups to unicorns. Beautiful UX, brutal reliability.</p>
+
+          <div class="cta-row">
+            <button class="button" onclick="openSignup()">Get early access</button>
+            <button class="ghost" onclick="openDemo()">Request demo</button>
+          </div>
+
+          <div class="features">
+            <div class="feature">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20" stroke="#fff" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <h4>API-first</h4>
+                <p>Integrate in hours with modern REST and SDKs.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-opacity="0.9" stroke-width="1.4"/></svg>
+              <div>
+                <h4>Regulatory-aware</h4>
+                <p>Compliance-first product design and reporting.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="#fff" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div>
+                <h4>Scalable core</h4>
+                <p>High-throughput ledger and settlement primitives.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div>
+                <h4>Beautiful UX</h4>
+                <p>Design-first flows that increase conversions and trust.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:22px;display:flex;align-items:center;gap:12px">
+            <div class="notice">⚡ 10x faster integrations, trusted by early adopters</div>
+            <div style="margin-left:auto;color:var(--muted);font-size:13px">Beta · Invite-only</div>
+          </div>
+        </div>
+
+        <aside class="card-aside hero-card">
+          <div class="unicorn">
+            <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="u" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb7185"/></linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="12" fill="url(#u)"/> 
+              <path d="M20 40c0-6 6-9 10-10l4-2 1-4c0-2-3-5-6-5s-9 3-9 7c0 1-1 1-1 2s1 1 1 1c1 1 3 1 3 4 0 3-2 8-2 9z" fill="#fff" opacity="0.95" transform="translate(2,2)"/>
+            </svg>
+            <div>
+              <div style="font-weight:800">SNU Finntech</div>
+              <div style="font-size:12px;color:var(--muted)">Platform & Treasury</div>
+            </div>
+          </div>
+
+          <div class="ticker">
+            <div class="stat"><small style="color:var(--muted)">AUM</small><strong>$1.2B</strong></div>
+            <div class="stat"><small style="color:var(--muted)">Customers</small><strong>120+</strong></div>
+            <div class="stat"><small style="color:var(--muted)">Uptime</small><strong>99.99%</strong></div>
+          </div>
+
+          <div style="margin-top:14px;color:var(--muted);font-size:13px">Join the waiting list to get early access and a product walkthrough.</div>
+
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <input class="input" id="emailAside" type="email" placeholder="Your work email" />
+            <button class="button" onclick="submitAside()">Join</button>
+          </div>
+
+          <svg class="sparkle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="4"><path d="M50 20 L62 36 L80 40 L66 56 L68 74 L50 66 L32 74 L34 56 L20 40 L38 36 Z"/></g></svg>
+        </aside>
+      </div>
+
+      <section id="product" class="products">
+        <h2 style="margin:0 0 12px 0">Products</h2>
+        <p style="margin:0 0 18px 0;color:var(--muted)">Modular building blocks to accelerate your financial product roadmap.</p>
+        <div class="grid">
+          <div class="product">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:12px;align-items:center"><svg width="40"height="40"viewBox="0 0 24 24"><circle cx="12"cy="12"r="10" fill="#7c3aed" /></svg><div style="font-weight:700">Treasury</div></div>
+              <div style="color:var(--muted);font-size:12px">Stable & compliant</div>
+            </div>
+            <h3>Managed Treasury</h3>
+            <p>Native FX, settlement rails, and insured custody with programmatic controls.</p>
+          </div>
+
+          <div class="product">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:12px;align-items:center"><svg width="40"height="40"viewBox="0 0 24 24"><rect x="2"y="3"width="20"height="18" rx="4" fill="#fb7185"/></svg><div style="font-weight:700">Lending</div></div>
+              <div style="color:var(--muted);font-size:12px">Risk-aware</div>
+            </div>
+            <h3>Underwriting & Lending APIs</h3>
+            <p>Power lending products with flexible collateral and risk models.</p>
+          </div>
+
+          <div class="product">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:12px;align-items:center"><svg width="40"height="40"viewBox="0 0 24 24"><path d="M3 12h18" stroke="#fff" stroke-width="2"/></svg><div style="font-weight:700">Payments</div></div>
+              <div style="color:var(--muted);font-size:12px">Fast settlement</div>
+            </div>
+            <h3>Embedded Payments</h3>
+            <p>Instant payouts, subscriptions, and reconciled ledgers in one API.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" style="max-width:1200px;margin:30px auto;padding:20px 24px">
+        <h2 style="margin:0 0 10px 0">Pricing & Plans</h2>
+        <p style="color:var(--muted);margin:0 0 18px 0">Simple, predictable pricing with custom enterprise plans available.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="product" style="min-width:220px;flex:1">
+            <h3>Starter</h3>
+            <div style="font-weight:800;font-size:20px">$0</div>
+            <p class="small-muted">Up to $100k processing / month</p>
+            <p style="color:var(--muted)">API access, sandbox, community support</p>
+          </div>
+          <div class="product" style="min-width:220px;flex:1">
+            <h3>Growth</h3>
+            <div style="font-weight:800;font-size:20px">$499</div>
+            <p class="small-muted">Priority support & higher caps</p>
+            <p style="color:var(--muted)">Everything in Starter + SLAs & dedicated CSM</p>
+          </div>
+          <div class="product" style="min-width:240px;flex:1">
+            <h3>Enterprise</h3>
+            <div style="font-weight:800;font-size:20px">Custom</div>
+            <p class="small-muted">Tailored for high-volume partners</p>
+            <p style="color:var(--muted)">Dedicated compliance & bespoke contracts</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" style="max-width:1200px;margin:20px auto;padding:20px 24px">
+        <h2 style="margin:0 0 12px 0">Backed by operators who build</h2>
+        <p style="color:var(--muted);margin:0 0 18px 0">Engineers from payments, infra, and fintech — shipping daily.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="product" style="min-width:200px"> <strong>J. Kim</strong><div class="small-muted">CEO · ex-payments</div></div>
+          <div class="product" style="min-width:200px"> <strong>M. Park</strong><div class="small-muted">CTO · infra</div></div>
+          <div class="product" style="min-width:200px"> <strong>S. Lee</strong><div class="small-muted">Head of Product</div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <div style="font-weight:700">SNU Finntech</div>
+        <div style="font-size:13px;color:var(--muted)">Seoul · © 2026 SNU Finntech</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a style="color:var(--muted);text-decoration:none">Privacy</a>
+        <a style="color:var(--muted);text-decoration:none">Docs</a>
+        <a style="color:var(--muted);text-decoration:none">Contact</a>
+      </div>
+    </footer>
+
+    <script>
+      function openSignup(){
+        const email = prompt('Enter your work email to get early access');
+        if(email && email.includes('@')){
+          alert('Thanks! You\'re on the list — keep an eye out for an invite.');
+        } else if(email){
+          alert('Please provide a valid email.');
+        }
+      }
+      function openDemo(){
+        alert('Thanks — a member of our team will reach out to coordinate a demo.');
+      }
+      function submitAside(){
+        const el = document.getElementById('emailAside');
+        if(el && el.value.includes('@')){ alert('Joined — we\'ll email you soon.'); el.value=''; }
+        else{ alert('Please enter a valid email.'); }
+      }
+    </script>
   </body>
 </html>
